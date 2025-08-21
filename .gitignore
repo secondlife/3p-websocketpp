@@ -92,3 +92,5 @@ web/secondlife.com.*
 
 .env
 .vscode
+/stage
+/*.bz2
