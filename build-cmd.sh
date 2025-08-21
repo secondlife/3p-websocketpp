@@ -18,7 +18,7 @@ if [ -z "$AUTOBUILD" ] ; then
 fi
 
 if [ "$OSTYPE" = "cygwin" ] ; then
-   autobuild="$(cygpath -u $AUTOBUILD)"
+   autobuild="$(cygpath -u "$AUTOBUILD")"
 else
    autobuild="$AUTOBUILD"
 fi
