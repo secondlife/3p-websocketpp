@@ -35,7 +35,7 @@ build=${AUTOBUILD_BUILD_ID:=0}
 echo "${WEBSOCKETPP_VERSION}.${build}" > "${stage}/VERSION.txt"
 
 pushd "$WEBSOCKETPP_SOURCE_DIR"
-    mkdir --parents "$stage/include/websocketpp"
+    mkdir -p "$stage/include/websocketpp"
     cp -r ../"${WEBSOCKETPP_SOURCE_DIR}"/websocketpp "$stage/include/"
 
     mkdir -p "$stage/LICENSES"
