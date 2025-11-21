@@ -45,4 +45,5 @@ popd
 
 # Apply C++20 fixes from websocketpp's PRs
 # Note that this patches the build artifacts, not the source!
-patch --directory "$stage/include/" -p1 < "$top/fix-cpp20-build.patch"
+# This only makes sense because this is a header-only library anyhow.
+patch --directory "$stage/include/" -p1 < "$top/patches/fix-cpp20-build.patch"
