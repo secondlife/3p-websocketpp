@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "$0")"
+top="$(pwd)"
 
 # turn on verbose debugging output for parabuild logs.
 exec 4>&1; export BASH_XTRACEFD=4; set -x
@@ -41,3 +42,7 @@ pushd "$WEBSOCKETPP_SOURCE_DIR"
     mkdir -p "$stage/LICENSES"
     cp COPYING "$stage/LICENSES/websocketpp.txt"
 popd
+
+# Apply C++20 fixes from websocketpp's PRs
+# Note that this patches the build artifacts, not the source!
+patch --directory "$stage/include/" -p1 < "$top/fix-cpp20-build.patch"
