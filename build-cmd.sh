@@ -48,3 +48,4 @@ popd
 # This only makes sense because this is a header-only library anyhow.
 patch --directory "$stage/include/" -p1 < "$top/patches/fix-cpp20-build.patch"
 patch --directory "$stage/include/" -p1 < "$top/patches/fix-server-handler-cpp20.patch"
+patch --directory "$stage/include/" -p1 < "$top/patches/fix-boost-asio-1.90-compat.patch"
